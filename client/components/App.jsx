@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { Component } from "react";
 
+import Nav from "./Nav.jsx";
 
-export default function App () {
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {};
+  }
+
+  componentDidMount() {
+    fetch("/api/cafes")
+      .then(res => console.log("res", res.json()))
+      .then(data => console.log("data", JSON.stringify(data)))
+      .catch(err => console.log("err", err));
+  }
+
+  render() {
     return (
-        <div>
-            COFFEE TIME
-         </div>
-    )
+      <div>
+        <Nav />
+      </div>
+    );
+  }
 }
+
+export default App;

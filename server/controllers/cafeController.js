@@ -15,14 +15,18 @@ cafeController.getCafes = (req,res,next) => {
         }
     ).then(res => res.json())
      .then(data => {
-
+        console.log(data.businesses)
          res.locals.coffeeHouses = [];
          for (let cafe of data.businesses){
             //  console.log("cafe", cafe)
              const coffeeShop = {
                  shopId: cafe.id,
                  shopName: cafe.name,
-                 shopImg: cafe.image_url
+                 shopImg: cafe.image_url,
+                 shopaddress: cafe.location.address1,
+                 shopCity: cafe.location.city,
+                 shopZip: cafe.location.zip_code,
+                 shopPhonce: cafe.phone
              }
              res.locals.coffeeHouses.push(coffeeShop)
          }
