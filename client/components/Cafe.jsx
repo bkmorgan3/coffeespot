@@ -7,13 +7,10 @@ class Cafe extends Component {
 
   render() {
     const list = [];
-    const shops = this.props.cafe.coffeeHouses;
-    console.log("shops", shops);
 
     return (
       <div>
         <p>Im a caffe</p>
-        {shops}
       </div>
     );
   }
