@@ -1,11 +1,10 @@
-import React from React;
+import React from "react";
 
-export default function Place(props){
+export default function Place(props) {
+  console.log("place props", props);
   return (
     <div>
-      <p>{props.shopName}</p>
-      <img src={props.shopImg} alt=""/>
-      <p>{props.shopAddress}</p>
+      <p>{props.name}</p>
     </div>
-  )
+  );
 }
