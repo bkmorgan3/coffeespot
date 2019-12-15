@@ -10,7 +10,7 @@ const cafeController = require("./controllers/cafeController");
 app.use(bodyParser.json());
 
 app.get("/api/cafes", cafeController.getCafes, (req, res) => {
-  res.status(200).json({ coffeeHouses: res.locals.coffeeHouses });
+  res.status(200).json(res.locals.coffeeHouses);
 });
 
 app.listen(PORT, err => {

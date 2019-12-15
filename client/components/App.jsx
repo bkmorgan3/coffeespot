@@ -16,13 +16,14 @@ class App extends Component {
     fetch("/api/cafes")
       .then(res => res.json())
       .then(data => {
+        console.log("data", data);
         this.setState({ cafes: data });
       })
       .catch(err => console.log("err", err));
   }
 
   render() {
-    console.log("state", this.state.cafes.coffeeHouses);
+    // console.log("state", this.state.cafes.coffeeHouses);
 
     return (
       <div>
