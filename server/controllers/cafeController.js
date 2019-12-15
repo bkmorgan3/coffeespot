@@ -24,7 +24,7 @@ cafeController.getCafes = (req, res, next) => {
           shopaddress: cafe.location.address1,
           shopCity: cafe.location.city,
           shopZip: cafe.location.zip_code,
-          shopPhonce: cafe.phone
+          shopPhone: cafe.phone
         };
         res.locals.coffeeHouses.push(coffeeShop);
       }
