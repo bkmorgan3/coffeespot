@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 
-class Cafe extends Component {
-  constructor(props) {
-    super(props);
+export default function Cafe(props) {
+  // console.log("props", props.cafes);
+  const list = [];
+  let myObj = props.cafes.coffeeHouses;
+  for (let key in props) {
+    console.log("key", myObj);
+    list.push(myObj);
   }
-
-  render() {
-    const list = [];
-
-    return (
-      <div>
-        <p>Im a caffe</p>
-      </div>
-    );
+  console.log("list", list);
+  for (let i = 0; i < list.length; i++) {
+    console.log("listing", list[i]);
   }
+  return (
+    <div>
+      <p>im a cafe</p>
+    </div>
+  );
 }
-
-export default Cafe;

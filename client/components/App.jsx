@@ -23,10 +23,11 @@ class App extends Component {
 
   render() {
     console.log("state", this.state.cafes.coffeeHouses);
+
     return (
       <div>
         <Nav />
-        <Cafe />
+        <Cafe cafes={this.state.cafes} />
       </div>
     );
   }
