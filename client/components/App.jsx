@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Nav from './Nav.jsx';
 import CafeScreen from './CafeScreen.jsx';
 
-require('./styles/index.css');
 
 class App extends Component {
   constructor() {
