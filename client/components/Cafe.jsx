@@ -1,22 +1,52 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Place from './Place.jsx';
+
 
 // declare proptypes use isRequired
 
-export default function Cafe(props) {
-  console.log("props", props.cafes);
-  let cafes = props.cafes;
-  const names = [];
+const Cafe = ({
+  shopId,
+  shopName,
+  shopImg,
+  shopAddress,
+  shopZip,
+  shopCity,
+  shopPhone,
+}) => (
+  <div>
+    <img src={shopImg} />
+    <p>
+shopName:
+      {shopName}
+    </p>
+    <p>
+shopAddress:
+      {shopAddress}
+    </p>
+    <p>
+shopZip:
+      {shopZip}
+    </p>
+    <p>
+shopCity:
+      {shopCity}
+    </p>
+    <p>
+shopPhone:
+      {shopPhone}
+    </p>
+  </div>
+);
 
-  for (let i = 0; i < cafes.length; i++) {
-    console.log(cafes[i]);
-    let img = <img src={cafes[i].shopImg} alt="" />;
-    names.push(img);
-  }
+Cafe.propTypes = {
+  shopId: PropTypes.string.isRequired,
+  shopName: PropTypes.string.isRequired,
+  shopImg: PropTypes.string.isRequired,
+  shopAddress: PropTypes.string.isRequired,
+  shopZip: PropTypes.string.isRequired,
+  shopCity: PropTypes.string.isRequired,
+  shopPhone: PropTypes.string.isRequired,
+};
 
-  return (
-    <div>
-      <p>im a cafe</p>
-      {names}
-    </div>
-  );
-}
+export default Cafe;
