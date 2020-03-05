@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: './client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -32,6 +32,7 @@ module.exports = {
       },
       {
         test: /(css|scss)$/,
+        exclude: /node_modules/,
         use: [
           // Creates style nodesfrom JS strings
           'style-loader',

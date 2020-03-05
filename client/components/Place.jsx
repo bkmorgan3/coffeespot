@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 
-export default function Place(props) {
-  console.log("place props", props);
+export default function Place({ name }) {
   return (
     <div>
-      <p>{props.name}</p>
+      <p>{name}</p>
     </div>
   );
 }
