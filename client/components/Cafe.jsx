@@ -4,22 +4,13 @@ import React from "react";
 
 export default function Cafe(props) {
   console.log("props", props.cafes);
-  let cafes = props.cafes;
-  const spots = [];
+  const names = [];
 
-  for (let i = 0; i < cafes.length; i++) {
-    console.log("c", cafes[i]);
-    let img = <img src={cafes[i].shopImg} alt="" />;
-    spots.push(cafes[i]);
+  for (let i = 0; i < props.cafes.length; i++) {
+    console.log("p.c.", props.cafes[i].shopName);
+    names.push(props.cafes[i].shopName);
   }
-  console.log("spots", spots);
-  return (
-    <div>
-      <p>im a cafe</p>
-      {spots.map(i => {
-        <h4>{i.shopName}</h4>;
-        <img src={i.shopImg} alt="" />;
-      })}
-    </div>
-  );
+  console.log(names[0]);
+  let store = names[0];
+  return <div>{store}</div>;
 }
