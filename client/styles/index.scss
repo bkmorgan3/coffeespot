@@ -1,0 +1,25 @@
+.app {
+border: 5px solid purple;
+}
+
+.content {
+  background-color: springgreen;
+  border: 3px solid red;
+}
+
+.cafe {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 90vh;
+  max-width: 70%
+}
+
+.photo {
+  max-width: 80%;
+  border: 3px solid yellow;
+  max-height: 20vh;
+  border-radius: 3px;
+}

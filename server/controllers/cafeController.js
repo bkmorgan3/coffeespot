@@ -1,39 +1,33 @@
-const fetch = require("node-fetch");
-require("dotenv").config();
+const fetch = require('node-fetch');
+require('dotenv').config();
 
 const cafeController = {};
 
 cafeController.getCafes = (req, res, next) => {
-  console.log("getting cafes");
-  const baseUrl = `https://api.yelp.com/v3/businesses/search?term=coffee&location=LA`;
+  const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffee&location=LA';
   fetch(baseUrl, {
     headers: {
-      Authorization: `Bearer ${process.env.API_KEY}`
-    }
+      Authorization: `Bearer ${process.env.API_KEY}`,
+    },
   })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.businesses);
+    .then((result) => result.json())
+    .then((data) => {
       res.locals.coffeeHouses = [];
-      for (let cafe of data.businesses) {
-        //  console.log("cafe", cafe)
+      for (const cafe of data.businesses) {
         const coffeeShop = {
           shopId: cafe.id,
           shopName: cafe.name,
           shopImg: cafe.image_url,
-          shopaddress: cafe.location.address1,
+          shopAddress: cafe.location.address1,
           shopCity: cafe.location.city,
           shopZip: cafe.location.zip_code,
-          shopPhone: cafe.phone
+          shopPhone: cafe.phone,
         };
         res.locals.coffeeHouses.push(coffeeShop);
       }
-      console.log("res.locs", res.locals.coffeeHouses);
       return next();
     })
-    .catch(err => {
-      return next({ err: "There is an error in the get Cafes handler" });
-    });
+    .catch((err) => next({ err }));
 };
 
 module.exports = cafeController;
