@@ -20,23 +20,18 @@ const Cafe = ({
       </div>
       <div className="content">
         <p>
-
           {shopName}
         </p>
         <p>
-
           {shopAddress}
         </p>
         <p>
-
           {shopZip}
         </p>
         <p>
-
           {shopCity}
         </p>
         <p>
-
           {shopPhone}
         </p>
       </div>

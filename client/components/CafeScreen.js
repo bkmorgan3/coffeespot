@@ -6,10 +6,11 @@ import Cafe from './Cafe';
 const CafeScreen = ({
   cafes,
 }) => (
-  <div>
-    <h1>Welcome to the Cafe Screen</h1>
-    <div className="content">
-      {
+    // eslint-disable-next-line react/jsx-filename-extension
+    <div>
+      <h1>Welcome to the Cafe Screen</h1>
+      <div className="cafe-layout">
+        {
           cafes.map(({
             shopId,
             shopName,
@@ -19,21 +20,21 @@ const CafeScreen = ({
             shopCity,
             shopPhone,
           }) => (
-            <Cafe
-              key={shopId}
-              shopId={shopId}
-              shopName={shopName}
-              shopImg={shopImg}
-              shopAddress={shopAddress}
-              shopZip={shopZip}
-              shopCity={shopCity}
-              shopPhone={shopPhone}
-            />
-          ))
-                }
+              <Cafe
+                key={shopId}
+                shopId={shopId}
+                shopName={shopName}
+                shopImg={shopImg}
+                shopAddress={shopAddress}
+                shopZip={shopZip}
+                shopCity={shopCity}
+                shopPhone={shopPhone}
+              />
+            ))
+        }
+      </div>
     </div>
-  </div>
-);
+  );
 
 CafeScreen.propTypes = {
   cafes: PropTypes.arrayOf(

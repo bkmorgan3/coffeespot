@@ -1,7 +1,11 @@
 const fetch = require('node-fetch');
+const getLocation = require('../utils');
+
+
 require('dotenv').config();
 
 const cafeController = {};
+
 
 cafeController.getCafes = (req, res, next) => {
   const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffee&location=LA';
@@ -13,6 +17,7 @@ cafeController.getCafes = (req, res, next) => {
     .then((result) => result.json())
     .then((data) => {
       res.locals.coffeeHouses = [];
+      // eslint-disable-next-line no-restricted-syntax
       for (const cafe of data.businesses) {
         const coffeeShop = {
           shopId: cafe.id,
