@@ -1,6 +1,4 @@
 const fetch = require('node-fetch');
-const getLocation = require('../utils');
-
 
 require('dotenv').config();
 
@@ -8,7 +6,8 @@ const cafeController = {};
 
 
 cafeController.getCafes = (req, res, next) => {
-  const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffee&location=LA';
+  console.log('req', req.params);
+  const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffeelatitude=${req.params.latitude}&&longitude=${req.params.longitude}';
   fetch(baseUrl, {
     headers: {
       Authorization: `Bearer ${process.env.API_KEY}`,
