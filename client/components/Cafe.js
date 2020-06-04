@@ -12,31 +12,36 @@ const Cafe = ({
   shopCity,
   shopPhone,
 }) => (
-  // eslint-disable-next-line react/jsx-filename-extension
-  <div className="cafe" key={shopId}>
-    <img className="photo" src={shopImg} alt={shopName} />
-    <p>
-shopName:
-      {shopName}
-    </p>
-    <p>
-shopAddress:
-      {shopAddress}
-    </p>
-    <p>
-shopZip:
-      {shopZip}
-    </p>
-    <p>
-shopCity:
-      {shopCity}
-    </p>
-    <p>
-shopPhone:
-      {shopPhone}
-    </p>
-  </div>
-);
+    // eslint-disable-next-line react/jsx-filename-extension
+    <div className="cafe" key={shopId}>
+
+      <div className="photo-container">
+        <img className="photo" src={shopImg} alt={shopName} />
+      </div>
+      <div className="content">
+        <p>
+
+          {shopName}
+        </p>
+        <p>
+
+          {shopAddress}
+        </p>
+        <p>
+
+          {shopZip}
+        </p>
+        <p>
+
+          {shopCity}
+        </p>
+        <p>
+
+          {shopPhone}
+        </p>
+      </div>
+    </div>
+  );
 
 Cafe.propTypes = {
   shopId: PropTypes.string.isRequired,
