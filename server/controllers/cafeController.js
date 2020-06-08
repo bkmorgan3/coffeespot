@@ -6,8 +6,7 @@ const cafeController = {};
 
 
 cafeController.getCafes = (req, res, next) => {
-  console.log('req', req.params);
-  const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffeelatitude=${req.params.latitude}&&longitude=${req.params.longitude}';
+  const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=coffee&location=LA';
   fetch(baseUrl, {
     headers: {
       Authorization: `Bearer ${process.env.API_KEY}`,

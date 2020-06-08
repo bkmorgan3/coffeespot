@@ -7,7 +7,7 @@ const CafeScreen = ({
   cafes,
 }) => (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div>
+    <div className="container">
       <h1>Welcome to the Cafe Screen</h1>
       <div className="cafe-layout">
         {

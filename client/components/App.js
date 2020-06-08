@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import CafeScreen from './CafeScreen';
 import '../styles/index.scss';
-import { getLocation } from '../utils';
 
 
 class App extends Component {
@@ -16,7 +15,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(getLocation());
     fetch('/api/cafes')
       .then((res) => res.json())
       .then((data) => {
