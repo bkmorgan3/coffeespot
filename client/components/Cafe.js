@@ -13,7 +13,7 @@ const Cafe = ({
   shopPhone,
 }) => (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div className="cafe" key={shopId}>
+  <div className="cafe" key={shopId}>
 
       <div className="photo-container">
         <img className="photo" src={shopImg} alt={shopName} />
@@ -34,6 +34,7 @@ const Cafe = ({
         <p>
           {shopPhone}
         </p>
+        <button className="delete">Remove Cafe</button>
       </div>
     </div>
   );
