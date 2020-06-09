@@ -14,7 +14,7 @@ class App extends Component {
       isLoaded: false,
       cafes: [],
     };
-    this.delete = this.delete.bind(this);
+    this.deleteCafe = this.deleteCafe.bind(this);
   }
 
   componentDidMount() {
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  delete(id) {
+  deleteCafe(id) {
     console.log('clicked', id);
   }
 
@@ -48,7 +48,7 @@ class App extends Component {
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="app">
         <Nav />
-        <CafeScreen cafes={cafes} delete={this.delete} />
+        <CafeScreen cafes={cafes} deleteCafe={() => this.deleteCafe()} />
       </div>
     )
     }

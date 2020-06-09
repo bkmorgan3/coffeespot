@@ -11,9 +11,9 @@ const Cafe = ({
   shopZip,
   shopCity,
   shopPhone,
-}) => (
-    // eslint-disable-next-line react/jsx-filename-extension
-  <div className="cafe" key={shopId}>
+  deleteCafe
+}) => {
+    return (<div className="cafe" key={shopId}>
 
       <div className="photo-container">
         <img className="photo" src={shopImg} alt={shopName} />
@@ -34,10 +34,10 @@ const Cafe = ({
         <p>
           {shopPhone}
         </p>
-        <button className="delete">Remove Cafe</button>
+        <button onClick={() => deleteCafe()} className="delete">Remove Cafe</button>
       </div>
-    </div>
-  );
+    </div>);
+  };
 
 Cafe.propTypes = {
   shopId: PropTypes.string.isRequired,
@@ -47,6 +47,7 @@ Cafe.propTypes = {
   shopZip: PropTypes.string.isRequired,
   shopCity: PropTypes.string.isRequired,
   shopPhone: PropTypes.string.isRequired,
+  deleteCafe: PropTypes.func.isRequired
 };
 
 export default Cafe;
