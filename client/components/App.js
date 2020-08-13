@@ -30,9 +30,7 @@ class App extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   deleteCafe(id) {
-    // eslint-disable-next-line no-undef
-    const updatedCafes = this.state.cafes.filter(cup => cup.shopId !== id)
-    this.setState({cafes: updatedCafes})
+    console.log('clicked', id);
   }
 
   render() {
@@ -41,15 +39,19 @@ class App extends Component {
       error,
       isLoaded,
     } = this.state;
-    if (error) return <div>Error: {error.message}</div>
-    if (!isLoaded) return <div>Loading...</div>
+    if (error) {
+      return <div>Error: {error.message}</div>
+    } else if (!isLoaded) {
+      return <div>Loading...</div>
+    } else {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="app">
         <Nav />
-        <CafeScreen cafes={cafes} deleteCafe={this.deleteCafe} />
+        <CafeScreen cafes={cafes} deleteCafe={() => this.deleteCafe()} />
       </div>
     )
+    }
   }
 }
 
