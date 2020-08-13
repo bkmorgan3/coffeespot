@@ -5,7 +5,7 @@ import Cafe from './Cafe';
 
 const CafeScreen = ({
   cafes,
-  deleteCafe
+  deleteCafe,
 }) => (
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="container">
@@ -20,7 +20,6 @@ const CafeScreen = ({
             shopZip,
             shopCity,
             shopPhone,
-            deleteCafe
           }) => (
               <Cafe
                 key={shopId}
